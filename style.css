@@ -1,0 +1,167 @@
+/* --- CORE SETUP --- */
+:root {
+    --gold: #d4af37;
+    --gold-bright: #f1d279;
+    --glass: rgba(0, 0, 0, 0.6);
+    --border: rgba(212, 175, 55, 0.3);
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    color: white; min-height: 100vh;
+    animation: fadeInPage 1.2s ease-in-out;
+}
+
+@keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- REUSABLE GLASS PANEL --- */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 30px;
+    transition: 0.4s ease;
+}
+
+.glass-panel:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+/* --- NAVIGATION --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 8%; background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem; font-weight: bold; letter-spacing: 3px;
+    color: var(--gold); text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.nav-links a {
+    color: white; text-decoration: none; margin-left: 25px;
+    font-size: 0.85rem; text-transform: uppercase; transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* --- HERO SECTION --- */
+.hero { height: 85vh; display: flex; align-items: center; padding: 0 8%; }
+.hero-text h1 { font-size: 4.5rem; line-height: 1; margin-bottom: 10px; text-transform: uppercase; }
+.gold-text { color: var(--gold); letter-spacing: 2px; }
+
+/* --- BOOKING BAR --- */
+.booking-bar {
+    margin: 40px 0; display: inline-flex; align-items: center;
+    background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 10px 10px 30px; border-radius: 100px;
+}
+
+.input-group { display: flex; flex-direction: column; padding-right: 20px; }
+.input-group label { font-size: 0.6rem; color: var(--gold); text-transform: uppercase; font-weight: 700; }
+.input-group input, .modern-select { background: transparent; border: none; color: white; outline: none; cursor: pointer; }
+.divider { width: 1px; height: 30px; background: rgba(255, 255, 255, 0.2); margin-right: 20px; }
+
+/* --- BUTTONS --- */
+.btn-modern {
+    background: var(--gold); color: black; font-weight: 700; border: none;
+    padding: 15px 30px; border-radius: 100px; cursor: pointer; transition: 0.3s;
+    text-transform: uppercase; font-size: 0.8rem;
+}
+
+.btn-modern:hover { background: white; transform: scale(1.05); }
+
+/* --- STYLISH SUBMIT INQUIRY BUTTON --- */
+.btn-submit {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 4px; /* Sharp luxury look */
+    z-index: 1;
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: var(--gold);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+}
+
+.btn-submit:hover {
+    color: black;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-submit:hover::before {
+    left: 0;
+}
+
+/* --- EXPLORE LINK --- */
+.aesthetic-link {
+    display: flex; align-items: center; text-decoration: none; color: white;
+    font-weight: 500; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;
+}
+
+.link-text { position: relative; margin-right: 15px; }
+.link-text::after {
+    content: ''; position: absolute; width: 0%; height: 1px;
+    bottom: -5px; left: 0; background: var(--gold); transition: 0.4s;
+}
+
+.link-circle {
+    width: 40px; height: 40px; border: 1px solid var(--border);
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: 0.4s;
+}
+
+.aesthetic-link:hover .link-text::after { width: 100%; }
+.aesthetic-link:hover .link-circle { background: var(--gold); transform: translateX(10px); }
+.aesthetic-link:hover .link-arrow { color: black; }
+
+/* --- ROOMS GRID --- */
+.rooms-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; padding: 80px 8%;
+}
+.room-img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
+
+/* --- CONTACT PAGE --- */
+.contact-container { padding: 80px 8%; display: flex; align-items: center; min-height: 80vh; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; width: 100%; }
+
+.modern-input-group { position: relative; margin-bottom: 35px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.modern-input-group input, .modern-input-group textarea {
+    width: 100%; background: transparent; border: none; color: white; padding: 10px 0; outline: none;
+}
+.modern-input-group label { position: absolute; left: 0; top: 10px; color: rgba(255,255,255,0.5); transition: 0.3s; pointer-events: none; }
+
+.modern-input-group input:focus ~ label, .modern-input-group input:valid ~ label { top: -18px; font-size: 0.7rem; color: var(--gold); }
+
+/* --- SERVICES --- */
+.services-container { padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; display: block; }

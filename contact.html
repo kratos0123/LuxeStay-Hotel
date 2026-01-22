@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | LuxeStay</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 8%;
+            min-height: 80vh;
+        }
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+        }
+        .input-group {
+            margin-bottom: 25px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: white;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">LUXESTAY</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<div class="contact-container">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h1 class="gold-text">Let's Connect</h1>
+            <p>Experience the pinnacle of luxury. Reach out to our 24/7 concierge for bookings and inquiries.</p>
+            
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div>
+                    <h4>Location</h4>
+                    <p>123 Luxury Way, Beverly Hills, CA</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div>
+                    <h4>Reservations</h4>
+                    <p>+1 (800) LUXE-STAY</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-panel contact-form-modern">
+            <div class="form-header">
+                <h3>Send a Message</h3>
+            </div>
+            <div class="input-row">
+                <div class="modern-input-group">
+                    <input type="text" required>
+                    <label>First Name</label>
+                </div>
+                <div class="modern-input-group">
+                    <input type="text" required>
+                    <label>Last Name</label>
+                </div>
+            </div>
+            <div class="modern-input-group">
+                <input type="email" required>
+                <label>Email Address</label>
+            </div>
+            <div class="modern-input-group">
+                <textarea rows="4" required></textarea>
+                <label>Your Message</label>
+            </div>
+            <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
